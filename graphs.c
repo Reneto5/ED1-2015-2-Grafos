@@ -1,9 +1,5 @@
+#include <stdlib.h>
 #include "graphs.h"
-
-struct graph {
-    int node_count;
-    float** matrix;
-};
 
 void create_graph(Graph* input_graph , int node_count) {
     
