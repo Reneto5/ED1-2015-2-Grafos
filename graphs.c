@@ -10,9 +10,6 @@ void create_graph(Graph* input_graph , int node_count) {
     input_graph->matrix = calloc(node_count , sizeof(float*));
     for(int i = 0; i < node_count; i++) {
         input_graph->matrix[i] = calloc(node_count , sizeof(float));
-        for(int j = 0; j < node_count; j++) {
-        	input_graph->matrix[i][j] = 0; // Initialize the values of the matrix to zero - to avoid garbage data in the graph
-        }
     }
     input_graph->node_count = node_count;
 }
