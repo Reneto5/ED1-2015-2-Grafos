@@ -1,1 +1,1 @@
-# Trabalho de Estruturas de Dados 1 - UFF - Grafos Orientados
+# Trabalho de Estruturas de Dados 1 - UFF - Grafos Não-Orientados
