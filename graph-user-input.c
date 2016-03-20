@@ -21,7 +21,7 @@ void create_edge_option(Graph* input_graph) {
 		//Verify correct user input
 		if(node1 > 0 && node2 > 0 && weight > 0 && node1 <= input_graph->node_count && node2 <= input_graph->node_count) {
 			printf("Criando aresta de peso %f entre o vertice %d e o vertice %d\n" , weight , node1 , node2);
-			create_edge(input_graph , (node1 - 1) , (node2 - 1), weight);
+			create_edge(input_graph , (node1 ) , (node2 ), weight);
 		} else {
 			printf("Erro na hora de remover a aresta\n");
 			break;
@@ -46,8 +46,8 @@ void remove_edge_option(Graph* input_graph) {
 		scanf("%d %d" , &node1 , &node2);
 		
 		if(node1 > 0 && node2 > 0 && node1 <= input_graph->node_count && node2 <= input_graph->node_count) {
-			printf("Removendo aresta de peso %f entre o vertice %d e o vertice %d\n" , input_graph->matrix[(node1-1)][(node2-1)] , node1 , node2);
-			remove_edge(input_graph , (node1-1) , (node2-1));
+			printf("Removendo aresta de peso %f entre o vertice %d e o vertice %d\n" , input_graph->matrix[(node1)][(node2)] , node1 , node2);
+			remove_edge(input_graph , (node1) , (node2));
 		} else {
 			printf("Erro na hora de remover a aresta.\n");
 			break;
@@ -73,27 +73,33 @@ void create_path_options(Graph* graph ){
 void create_general_options(Graph* graph){
     int flag; int visited[graph->node_count];
 	printf("\nDigite o numero da opçao desejada, para sair do programa, digite 0.\n");
-	printf("\n1. Inserir uma aresta\n2. Remover uma aresta\n3. Descobrir se um vertice s é assesivel a partir de um vertice d.\n4. Inserir um vertice\n5. Remover um vertice\n6. Saber se o grafo é conexo\n");
+	printf("\n1. Inserir uma aresta\n2. Remover uma aresta\n3. Descobrir se um vertice s é assesivel a partir de um vertice d.\n4. Inserir um vertice\n5. Remover um vertice\n6. Saber se o grafo é conexo\n7. Listar vertices e seus custos\n");
 	while(scanf("%d",&flag) && flag!= 0) {
 	 switch(flag){
 		
 			case 1:
 				create_edge_option(graph);
-				printf("Digite uma nova opção(1-6) ou 0 para abortar o programa.:\n");
+				printf("Digite uma nova opção(1-7) ou 0 para abortar o programa.:\n");
 				break;
 			case 2:
 				remove_edge_option(graph);
-				printf("Digite uma nova opção(1-6) ou 0 para abortar o programa.:\n");
+				printf("Digite uma nova opção(1-7) ou 0 para abortar o programa.:\n");
 				break;
 			case 3:
 			    create_path_options(graph);
-			    printf("\nDigite uma nova opção(1-6) ou 0 para abortar o programa.:\n");
+			    printf("\nDigite uma nova opção(1-7) ou 0 para abortar o programa.:\n");
 				break;
 			case 6:
 			    if(isConnected(graph,visited)) printf("O grafo é conexo.");
-			        else printf("O grafo não é conexo.");
-			    printf("\nDigite uma nova opção(1-6) ou 0 para abortar o programa.:\n");
-			        break;
+			    else printf("O grafo não é conexo.");
+			    printf("\nDigite uma nova opção(1-7) ou 0 para abortar o programa.:\n");
+			    break;
+			case 7:
+			    printEdges(graph);
+			    printf("\nDigite uma nova opção(1-7) ou 0 para abortar o programa.:\n");
+			    break;
+			default:
+			    printf("Digite uma opção válida(1-7).\n");
 	 }
 	}
     
