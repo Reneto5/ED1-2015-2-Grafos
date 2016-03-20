@@ -54,3 +54,22 @@ void remove_edge_option(Graph* input_graph) {
 		node2 = 0;
 	}
 }
+void create_general_options(Graph* graph){
+    int flag;
+	printf("\nDigite o numero da opçao desejada, para sair do programa, digite 0.\n");
+	printf("\n1. Inserir uma aresta\n2. Remover uma aresta\n3. Descobrir se um vertice s é assesivel a partir de um vertice d.\n4. Inserir um vertice\n5. Remover um vertice\n");
+	while(scanf("%d",&flag) && flag!= 0) {
+	 switch(flag){
+		
+			case 1:
+				create_edge_option(graph);
+				printf("Digite uma nova opção(1-5):\n");
+				break;
+			case 2:
+				remove_edge_option(graph);
+				printf("Digite uma nova opção(1-5):\n");
+				break;
+	 }
+    }
+    
+}
