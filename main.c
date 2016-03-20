@@ -4,7 +4,8 @@
 #include "graph-loader.h"
 
 int main(int argc, char** argv) {
-	char* filename = "arestas.txt";
+	
+	char* filename = argv[0]; 
 	printf("Loading...\n");
 	Graph* graph = load_graph(filename);
 	printf("Loaded file %s.\n", filename);
