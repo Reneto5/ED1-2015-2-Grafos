@@ -37,7 +37,7 @@ void remove_edge_option(Graph* input_graph) {
 	int node2 = 0;
 	
 	printf("Digite a quantidade de arestas a serem removidas\n");
-	scanf("&d" , &edge_quantity);
+	scanf("%d" , &edge_quantity);
 	
 	for(int i = 0 ; i < edge_quantity; i++) {
 		printf("Digite a aresta a ser removida de %d- (formato : vertice1 vertice2)\n" , (i+1));
