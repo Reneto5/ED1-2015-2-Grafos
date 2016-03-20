@@ -1,6 +1,6 @@
 #ifndef GRAPHS_H
 #define GRAPHS_H
-
+#define bool int
 struct graph {
     int node_count;
     float** matrix;
@@ -14,5 +14,6 @@ void destroy_graph(Graph* input_graph);
 int contains_edge(Graph* input_graph , int node1 , int node2);
 void create_edge(Graph* input_graph , int node1 , int node2, float weight);
 void remove_edge(Graph* input_graph , int node1 , int node2);
-
+void dfs(Graph* g,int v,bool visited[]);
+int isConnected(Graph* graph,int visited[]);
 #endif /* GRAPHS_H */
