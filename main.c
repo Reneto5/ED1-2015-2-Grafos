@@ -22,6 +22,7 @@ int main(int argc, char** argv) {
 		}
 	}
 	printf("Found %d edges (%d matrix entries).\n", edge_count >> 1, edge_count);
+	create_general_options(graph);
     return (EXIT_SUCCESS);
 }
 
