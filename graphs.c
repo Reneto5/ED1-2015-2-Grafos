@@ -33,7 +33,7 @@ void remove_edge(Graph* input_graph , int node1 , int node2) {
     input_graph->matrix[node1][node2] = 0;
     input_graph->matrix[node2][node1] = 0;
 }
-/* Deph first search */
+/* Depth first search */
 void dfs(Graph* g,int v,bool visited[]){
     
     float** matrix = g->matrix;
