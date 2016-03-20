@@ -17,4 +17,5 @@ void remove_edge(Graph* input_graph , int node1 , int node2);
 void dfs(Graph* g,int v,bool visited[]);
 int isConnected(Graph* graph,int visited[]);
 int degree(Graph* graph,int v);
+void printEdges(Graph* graph);
 #endif /* GRAPHS_H */
