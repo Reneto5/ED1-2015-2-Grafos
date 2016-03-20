@@ -33,7 +33,7 @@ void remove_edge(Graph* input_graph , int node1 , int node2) {
     input_graph->matrix[node1][node2] = 0;
     input_graph->matrix[node2][node1] = 0;
 }
-/* Depth first search */
+/* Deph first search */
 void dfs(Graph* g,int v,bool visited[]){
     
     float** matrix = g->matrix;
@@ -55,7 +55,7 @@ int degree(Graph* graph,int v){
  
 int isConnected(Graph* graph,int visited[]){
     
-	for(int i = 0 ; i <graph->node_count;i++)  {visited[i] = 0;}
+	for(int i =  0; i <graph->node_count;i++)  {visited[i] = 0;}
     dfs(graph,1,visited);
     int count = 0;
      
@@ -66,3 +66,12 @@ int isConnected(Graph* graph,int visited[]){
     return count == graph->node_count;
 }
 
+void printEdges(Graph* graph){
+   
+    for(int i = 0 ; i < graph->node_count; i++){
+        for(int j = 0 ; j < graph->node_count; j++){
+            if(contains_edge(graph,i,j)){
+                    printf("Edge: %d->%d\tWeight: %f\n",i,j,(graph->matrix)[i][j]);}
+                  } 
+    }
+}
