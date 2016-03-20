@@ -112,9 +112,9 @@ int isConnected(Graph* graph, int visited[]) {
 void printEdges(Graph* graph) {
 
     for (int i = 0; i < graph->node_count; i++) {
-        for (int j = 0; j < graph->node_count; j++) {
+        for (int j = 0; j < (i+1); j++) {
             if (contains_edge(graph, i, j)) {
-                printf("Edge: %d->%d\tWeight: %f\n", i, j, (graph->matrix)[i][j]);
+                printf("Edge: %d<->%d\tWeight: %f\n", i, j, (graph->matrix)[i][j]);
             }
         }
     }
