@@ -45,10 +45,17 @@ void dfs(Graph* g,int v,bool visited[]){
     }
         
 }
+int degree(Graph* graph,int v){
+    int count = 0;
+    for(int i =0 ; i <graph->node_count; i++){
+        if(graph->matrix[v][i] > 0) { count++;}
+    }
+    return count;
+}
  
 int isConnected(Graph* graph,int visited[]){
     
-for(int i = 0 ; i <graph->node_count;i++)  {visited[i] = 0;}
+	for(int i = 0 ; i <graph->node_count;i++)  {visited[i] = 0;}
     dfs(graph,1,visited);
     int count = 0;
      
@@ -58,11 +65,4 @@ for(int i = 0 ; i <graph->node_count;i++)  {visited[i] = 0;}
     }
     return count == graph->node_count;
 }
-int degree(Graph* graph,int v){
-    int count = 0;
-    for(int i =0 ; i <graph->node_count; i++){
-        if(graph->matrix[v][i] > 0) { count++;}
-    }
-    return count;
-}
- 
+
