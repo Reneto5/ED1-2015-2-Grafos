@@ -48,7 +48,7 @@ void dfs(Graph* g,int v,bool visited[]){
  
 int isConnected(Graph* graph,int visited[]){
     
-	for(int i = 0 ; i <graph->node_count;i++)  {visited[i] = 0;}
+for(int i = 0 ; i <graph->node_count;i++)  {visited[i] = 0;}
     dfs(graph,1,visited);
     int count = 0;
      
