@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "graphs.h"
 #include "graph-user-input.h"
+#include "dijkstra.h"
 
 void create_node_option(Graph* input_graph) {
     create_node(input_graph);

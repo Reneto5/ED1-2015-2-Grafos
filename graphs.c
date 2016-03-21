@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "graphs.h"
 #include <limits.h>

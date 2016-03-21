@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "graphs.h"
 #include "graph-loader.h"
+#include "graph-user-input.h"
 
 int main(int argc, char** argv) {
     if (argc == 2) {

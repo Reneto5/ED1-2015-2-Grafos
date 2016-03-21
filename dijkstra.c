@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "graphs.h"
 #include <limits.h>
@@ -24,7 +25,7 @@ void printPath(float parent[], int j){
  
     printf("%d ", j);
 }
-float printSolution(float dist[], int n, float parent[],int src){
+void printSolution(float dist[], int n, float parent[],int src){
     
     printf("Aresta          Distancia        Caminho");
     for (int i = 1; i < n; i++){
@@ -82,10 +83,10 @@ void shortestPathList(Graph* graph, int src){
  
     printSolution(dist, node_count, parent,src);
 }
-float printSingleSolution(float dist[], int n, float parent[],int src,int dest){
+void printSingleSolution(float dist[], int n, float parent[],int src,int dest){
     if(dist[dest] != FLT_MAX){ 
          printf("Caminho encontrado!\n\n");
-        printf("Edge            Distance         Path");
+        printf("Aresta          Distancia        Caminho");
         printf("\n%d -> %d          %f         ", src, dest, dist[dest]);
         printPath(parent, dest);
     }
