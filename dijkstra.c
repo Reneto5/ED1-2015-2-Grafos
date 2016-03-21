@@ -26,7 +26,7 @@ void printPath(float parent[], int j){
 }
 float printSolution(float dist[], int n, float parent[],int src){
     
-    printf("Edge            Distance         Path");
+    printf("Aresta          Distancia        Caminho");
     for (int i = 1; i < n; i++){
         if(dist[i] != FLT_MAX){
             printf("\n%d -> %d          %f         ", src, i, dist[i]);
@@ -84,13 +84,13 @@ void shortestPathList(Graph* graph, int src){
 }
 float printSingleSolution(float dist[], int n, float parent[],int src,int dest){
     if(dist[dest] != FLT_MAX){ 
-         printf("Path found!\n\n");
+         printf("Caminho encontrado!\n\n");
         printf("Edge            Distance         Path");
         printf("\n%d -> %d          %f         ", src, dest, dist[dest]);
         printPath(parent, dest);
     }
     else{
-        printf("There is no possible path!!\n\n");
+        printf("Nao ha caminho entre os vertices informados.\n\n");
     }
     
     
@@ -99,14 +99,14 @@ float printSingleSolution(float dist[], int n, float parent[],int src,int dest){
 void isThereAPath(Graph* graph, int src, int dest){
     float** matrix = graph->matrix;
     int node_count = graph->node_count;
-    float dist[node_count];  // Output array  
+    float* dist = malloc(node_count * sizeof(float));  // Output array  
  
     // "boolean" array to store whether a vertex i is included in the shortest path route
     // path tree or shortest distance from src to i is finalized
-    bool sptSet[node_count];
+    bool* sptSet = malloc(node_count * sizeof(bool));
  
     // storing the path tree
-    float parent[node_count];
+    float* parent = malloc(node_count * sizeof(float));
  
  
     for (int i = 0; i < node_count; i++)

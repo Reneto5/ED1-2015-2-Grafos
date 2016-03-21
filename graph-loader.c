@@ -14,8 +14,8 @@ Graph* load_graph(char* filename){
 	FILE* graph_file = fopen(filename, "r");
 	//printf("opening file at %p\n", graph_file);
 	if (graph_file == NULL){
-		printf("[graph-loader] Error while reading file \"%s\": %s\n", filename, strerror(errno));
-		exit(1);
+		printf("[graph-loader] Erro ao carregar o arquivo \"%s\": %s\n", filename, strerror(errno));
+		exit(EXIT_FAILURE);
 	}
 	//printf("[graph-loader] loaded file %s successfully\n", filename);
 	Graph* graph = calloc(1, sizeof(Graph));

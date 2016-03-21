@@ -6,12 +6,12 @@
 int main(int argc, char** argv) {
     if (argc == 2) {
         char* filename = argv[1];
-        printf("Loading...\n");
+        printf("Carregando...\n");
         Graph* graph = load_graph(filename);
-        printf("Loaded file %s.\n", filename);
+        printf("Arquivo aberto: \"%s\".\n", filename);
         int node_count = graph->node_count;
         int edge_count = 0;
-        printf("Found %d nodes.\n", node_count);
+        printf("%d vertices encontrados.\n", node_count);
         for (int i = 0; i < node_count; i++) {
             for (int j = 0; j < node_count; j++) {
                 if (contains_edge(graph, i, j)) {
@@ -22,11 +22,11 @@ int main(int argc, char** argv) {
                 }*/
             }
         }
-        printf("Found %d edges (%d matrix entries).\n", edge_count >> 1, edge_count);
+        printf("%d arestas encontradas.\n", edge_count >> 1);
         create_general_options(graph);
         return (EXIT_SUCCESS);
     } else {
-        printf("Erro na passagem do argumento");
+        printf("Argumentos invalidos.\nUso: graphs [nome do arquivo]\n");
         return (EXIT_FAILURE);
     }
 }
