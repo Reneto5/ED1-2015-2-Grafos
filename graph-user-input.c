@@ -6,7 +6,7 @@
 
 void create_node_option(Graph* input_graph) {
     create_node(input_graph);
-    printf("Vertice criado.\nQuantidade de vertices atual: %d\n", input_graph->node_count);
+    printf("Vertice adicionado na posicao %d.\nQuantidade de vertices atual: %d\n", (input_graph->node_count - 1), input_graph->node_count);
 }
 
 void remove_node_option(Graph* input_graph) {

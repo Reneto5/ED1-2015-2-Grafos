@@ -100,6 +100,7 @@ int isConnected(Graph* graph, int visited[]) {
     for (int i = 0; i < graph->node_count; i++) {
         visited[i] = 0;
     }
+    visited[0] = 1;
     dfs(graph, 1, visited);
     int count = 0;
 
